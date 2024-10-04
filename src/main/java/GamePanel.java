@@ -1,7 +1,11 @@
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.Point;
+
 
 public class GamePanel extends JPanel {
 
@@ -16,26 +20,25 @@ public class GamePanel extends JPanel {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                // Use the Snake.Direction enum to set the direction
                 switch (e.getKeyCode()) {
                     case KeyEvent.VK_UP:
-                        if (game.getSnake().getDirection() != Snake.Direction.DOWN) {
-                            game.getSnake().setDirection(Snake.Direction.UP);
+                        if (game.getSnake().getDirection() != Direction.DOWN) {
+                            game.getSnake().setDirection(Direction.UP);
                         }
                         break;
                     case KeyEvent.VK_DOWN:
-                        if (game.getSnake().getDirection() != Snake.Direction.UP) {
-                            game.getSnake().setDirection(Snake.Direction.DOWN);
+                        if (game.getSnake().getDirection() != Direction.UP) {
+                            game.getSnake().setDirection(Direction.DOWN);
                         }
                         break;
                     case KeyEvent.VK_LEFT:
-                        if (game.getSnake().getDirection() != Snake.Direction.RIGHT) {
-                            game.getSnake().setDirection(Snake.Direction.LEFT);
+                        if (game.getSnake().getDirection() != Direction.RIGHT) {
+                            game.getSnake().setDirection(Direction.LEFT);
                         }
                         break;
                     case KeyEvent.VK_RIGHT:
-                        if (game.getSnake().getDirection() != Snake.Direction.LEFT) {
-                            game.getSnake().setDirection(Snake.Direction.RIGHT);
+                        if (game.getSnake().getDirection() != Direction.LEFT) {
+                            game.getSnake().setDirection(Direction.RIGHT);
                         }
                         break;
                 }
